@@ -1,0 +1,8 @@
+{
+  "name": "cardApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

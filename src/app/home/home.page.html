@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Blank
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Get video or audio</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+
+    <ion-content>
+        <ion-row>
+            <ion-col>
+                <button ion-button full (click)="captureAudio()">Capture Audio</button>
+            </ion-col>
+            <ion-col>
+                <button ion-button full (click)="captureVideo()">Capture Video</button>
+            </ion-col>
+        </ion-row>
+
+        <ion-list>
+            <ion-item *ngFor="let file of mediaFiles" tappable (click)="play(file)" text-wrap>
+                {{ file.name }}
+                <p>{{ file.size / 1000 / 1000 | number }} MB</p>
+            </ion-item>
+        </ion-list>
+
+        <video controls autoplay #myvideo>
+</video>
+    </ion-content>
+</ion-content>
